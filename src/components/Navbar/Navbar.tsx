@@ -15,9 +15,7 @@ const Navbar: React.FC = () => {
           display={{ base: "none", md: "unset" }}
         ></Image>
       </Flex>
-      <Flex>
         <SearchInput />
-      </Flex>
     </Flex>
   )
 }
