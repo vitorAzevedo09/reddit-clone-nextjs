@@ -9,9 +9,11 @@ import {
     ModalBody,
     ModalCloseButton,
 } from '@chakra-ui/react'
+import { useRecoilState } from 'recoil';
+import { authModalState } from '@/src/atoms/authModalAtom';
 
 function BasicUsage() {
-    const { isOpen, onOpen, onClose } = useDisclosure()
+    const [modalState, setModalState] = useRecoilState(authModalState)
     return (
         <>
             <Button onClick={onOpen}>Open Modal</Button>
