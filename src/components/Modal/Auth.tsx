@@ -14,11 +14,26 @@ import { authModalState } from '@/src/atoms/authModalAtom';
 
 function BasicUsage() {
     const [modalState, setModalState] = useRecoilState(authModalState)
+
+    const handleClose = () => {
+            setModalState((prev) => ({
+                    ...prev,
+                    open: false,
+                }))
+        }
+
+    const handleOpen = () => {
+            setModalState((prev) => ({
+                    ...prev,
+                    open: true,
+                }))
+        }
+
     return (
         <>
-            <Button onClick={onOpen}>Open Modal</Button>
+            <Button onClick={handleOpen}>Open Modal</Button>
 
-            <Modal isOpen={isOpen} onClose={onClose}>
+            <Modal isOpen={modalState.open} onClose={handleClose}>
                 <ModalOverlay />
                 <ModalContent>
                     <ModalHeader>Modal Title</ModalHeader>
@@ -28,7 +43,7 @@ function BasicUsage() {
                     </ModalBody>
 
                     <ModalFooter>
-                        <Button colorScheme='blue' mr={3} onClick={onClose}>
+                        <Button colorScheme='blue' mr={3} onClick={handleClose}>
                             Close
                         </Button>
                         <Button variant='ghost'>Secondary Action</Button>
