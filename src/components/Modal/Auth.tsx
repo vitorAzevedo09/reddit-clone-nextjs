@@ -12,7 +12,7 @@ import {
 import { useRecoilState } from 'recoil';
 import { authModalState } from '@/src/atoms/authModalAtom';
 
-function BasicUsage() {
+const AuthModal: React.FC = () => {
     const [modalState, setModalState] = useRecoilState(authModalState)
 
     const handleClose = () => {
@@ -31,8 +31,6 @@ function BasicUsage() {
 
     return (
         <>
-            <Button onClick={handleOpen}>Open Modal</Button>
-
             <Modal isOpen={modalState.open} onClose={handleClose}>
                 <ModalOverlay />
                 <ModalContent>
@@ -41,17 +39,10 @@ function BasicUsage() {
                     <ModalBody>
                         Modal body
                     </ModalBody>
-
-                    <ModalFooter>
-                        <Button colorScheme='blue' mr={3} onClick={handleClose}>
-                            Close
-                        </Button>
-                        <Button variant='ghost'>Secondary Action</Button>
-                    </ModalFooter>
                 </ModalContent>
             </Modal>
         </>
     )
 }
 
-export default BasicUsage;
+export default AuthModal;
