@@ -23,20 +23,48 @@ const Login: React.FC<LoginProps> = () => {
     return (
         <form onSubmit={onSubmit}>
             <Input
+                required
                 name="email"
                 placeholder="email"
                 type="email"
                 mb={2}
                 onChange={onChange}
+                fontSize={10}
+                _placeholder={{color: 'gray.500'}}
+                _hover={{
+                        bg: "white",
+                        border: "1px solid",
+                        borderColor: "blue.500",
+                    }}
+                _focus={{
+                        outline: "none",
+                        bg: "white",
+                        border: "1px solid",
+                        borderColor: "blue.500"
+                    }}
             />
             <Input
+                required
                 name="password"
                 placeholder="password"
                 type="password"
                 mb={2}
                 onChange={onChange}
+                fontSize={10}
+                _placeholder={{color: 'gray.500'}}
+                _hover={{
+                        bg: "white",
+                        border: "1px solid",
+                        borderColor: "blue.500",
+                    }}
+                _focus={{
+                        outline: "none",
+                        bg: "white",
+                        border: "1px solid",
+                        borderColor: "blue.500"
+                    }}
             />
-            <Button type="submit">Log in</Button>
+            <Button width="100%" height="36px" mt={2} mb={2} type="submit">Log in</Button>
         </form>
     )
 }
