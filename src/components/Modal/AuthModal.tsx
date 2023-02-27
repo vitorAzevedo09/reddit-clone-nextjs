@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react'
 import { useRecoilState } from 'recoil';
 import { authModalState } from '@/src/atoms/authModalAtom';
+import AuthInputs from './AuthInputs';
 
 const AuthModal: React.FC = () => {
     const [modalState, setModalState] = useRecoilState(authModalState)
@@ -45,7 +46,7 @@ const AuthModal: React.FC = () => {
                         width="70%"
                         border = "1px solid red"
                         >
-                        Body Content
+                            <AuthInputs />
                         </Flex>
                     </ModalBody>
                 </ModalContent>
