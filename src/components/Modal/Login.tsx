@@ -2,12 +2,10 @@ import React from 'react'
 import { Input, Button, Text, Flex } from '@chakra-ui/react'
 import { useRecoilState, useSetRecoilState } from 'recoil'
 import { authModalState } from '@/src/atoms/authModalAtom'
+import  OAuthButton  from "./OAuthButton"
 
-type LoginProps = {
 
-}
-
-const Login: React.FC<LoginProps> = () => {
+const Login: React.FC = () => {
 
     const setAuthModalState = useSetRecoilState(authModalState)
 
@@ -24,6 +22,7 @@ const Login: React.FC<LoginProps> = () => {
 
     return (
         <form onSubmit={onSubmit}>
+            <OAuthButton />
             <Input
                 required
                 name="email"
