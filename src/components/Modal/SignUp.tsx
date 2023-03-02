@@ -29,9 +29,10 @@ function SignUp() {
 
     const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 
-        event.preventDefault;
+        event.preventDefault();
+        if(error)setError("");
 
-        if(signUpForm.email !== signUpForm.confirmPassword){
+        if(signUpForm.password !== signUpForm.confirmPassword){
                 setError("Passwords do not match")
                 return;
             }
@@ -41,7 +42,7 @@ function SignUp() {
     const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSignUpForm((prev) => ({
             ...prev,
-            [event.target.name]: [event.target.value],
+            [event.target.name]: event.target.value,
         }))
     };
 
@@ -110,9 +111,9 @@ function SignUp() {
                     borderColor: "blue.500"
                 }}
             />
-            { error && (
+            { (error || userError?.message) && (
                 <Text textAlign="center" color="red" fontSize="10pt">
-                    { error } 
+                    { (error || userError?.message) } 
                 </Text>
             )}
             <Button width="100%" height="36px" mt={2} mb={2} type="submit" isLoading={loading}>Sign Up</Button>
