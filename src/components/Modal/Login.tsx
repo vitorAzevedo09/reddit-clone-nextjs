@@ -9,7 +9,7 @@ const Login: React.FC = () => {
 
     const setAuthModalState = useSetRecoilState(authModalState)
 
-    const [loginForm, setLoginForm] = useRecoilState(authModalState)
+    const [_loginForm, setLoginForm] = useRecoilState(authModalState)
 
     const onSubmit = () => { };
 
@@ -22,7 +22,6 @@ const Login: React.FC = () => {
 
     return (
         <form onSubmit={onSubmit}>
-            <OAuthButton />
             <Input
                 required
                 name="email"

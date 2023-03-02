@@ -7,7 +7,7 @@ import { Input, Button, Text, Flex } from '@chakra-ui/react'
 function SignUp() {
     const setAuthModalState = useSetRecoilState(authModalState)
 
-    const [loginForm, setLoginForm] = useRecoilState(authModalState)
+    const [_loginForm, setLoginForm] = useRecoilState(authModalState)
 
     const onSubmit = () => { };
 
